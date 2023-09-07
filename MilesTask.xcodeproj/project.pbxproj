@@ -20,6 +20,17 @@
 		586AC6B22AAA1F72001284E4 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6B12AAA1F72001284E4 /* ProfileRequest.swift */; };
 		586AC6B42AAA1F7A001284E4 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6B32AAA1F7A001284E4 /* NetworkRequest.swift */; };
 		586AC6B62AAA1F80001284E4 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6B52AAA1F80001284E4 /* LogoutRequest.swift */; };
+		586AC6BB2AAA245C001284E4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6BA2AAA245C001284E4 /* CustomTextField.swift */; };
+		586AC6BD2AAA24AA001284E4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6BC2AAA24AA001284E4 /* UIColor+Extensions.swift */; };
+		586AC6BF2AAA3AEA001284E4 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6BE2AAA3AEA001284E4 /* InfoCell.swift */; };
+		586AC6C12AAA4260001284E4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6C02AAA4260001284E4 /* CustomLabel.swift */; };
+		586AC6C42AAA4447001284E4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6C32AAA4447001284E4 /* LoginModel.swift */; };
+		586AC6C62AAA4501001284E4 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6C52AAA4501001284E4 /* ProfileInfo.swift */; };
+		586AC6C82AAA48EA001284E4 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6C72AAA48EA001284E4 /* LoginNetworkService.swift */; };
+		586AC6CA2AAA49B3001284E4 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6C92AAA49B3001284E4 /* Observable.swift */; };
+		586AC6CC2AAA594F001284E4 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6CB2AAA594F001284E4 /* ResponseModel.swift */; };
+		586AC6CE2AAA617B001284E4 /* ProfileNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6CD2AAA617B001284E4 /* ProfileNetworkService.swift */; };
+		586AC6D02AAA75CB001284E4 /* LogoutNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6CF2AAA75CB001284E4 /* LogoutNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +49,17 @@
 		586AC6B12AAA1F72001284E4 /* ProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
 		586AC6B32AAA1F7A001284E4 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		586AC6B52AAA1F80001284E4 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
+		586AC6BA2AAA245C001284E4 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		586AC6BC2AAA24AA001284E4 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		586AC6BE2AAA3AEA001284E4 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		586AC6C02AAA4260001284E4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		586AC6C32AAA4447001284E4 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		586AC6C52AAA4501001284E4 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		586AC6C72AAA48EA001284E4 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
+		586AC6C92AAA49B3001284E4 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		586AC6CB2AAA594F001284E4 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		586AC6CD2AAA617B001284E4 /* ProfileNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNetworkService.swift; sourceTree = "<group>"; };
+		586AC6CF2AAA75CB001284E4 /* LogoutNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +92,7 @@
 		586AC6882AAA1D86001284E4 /* MilesTask */ = {
 			isa = PBXGroup;
 			children = (
+				586AC6C22AAA4438001284E4 /* Models */,
 				586AC6AC2AAA1F3B001284E4 /* Helpers */,
 				586AC6A82AAA1ED5001284E4 /* Services */,
 				586AC69D2AAA1D90001284E4 /* Application */,
@@ -92,8 +115,8 @@
 		586AC69E2AAA1E52001284E4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				586AC6A32AAA1EAF001284E4 /* ProfileScreen */,
 				586AC6A22AAA1EA1001284E4 /* LoginScreen */,
+				586AC6A32AAA1EAF001284E4 /* ProfileScreen */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -121,6 +144,7 @@
 			children = (
 				586AC6A42AAA1ECA001284E4 /* ProfileViewController.swift */,
 				586AC6A62AAA1ECF001284E4 /* ProfileViewModel.swift */,
+				586AC6BE2AAA3AEA001284E4 /* InfoCell.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -138,6 +162,9 @@
 			children = (
 				586AC6AB2AAA1EFE001284E4 /* Requests */,
 				586AC6AA2AAA1EF7001284E4 /* NetworkClient */,
+				586AC6C72AAA48EA001284E4 /* LoginNetworkService.swift */,
+				586AC6CD2AAA617B001284E4 /* ProfileNetworkService.swift */,
+				586AC6CF2AAA75CB001284E4 /* LogoutNetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -153,9 +180,9 @@
 		586AC6AB2AAA1EFE001284E4 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				586AC6B32AAA1F7A001284E4 /* NetworkRequest.swift */,
 				586AC6AF2AAA1F6B001284E4 /* LoginRequest.swift */,
 				586AC6B12AAA1F72001284E4 /* ProfileRequest.swift */,
-				586AC6B32AAA1F7A001284E4 /* NetworkRequest.swift */,
 				586AC6B52AAA1F80001284E4 /* LogoutRequest.swift */,
 			);
 			name = Requests;
@@ -164,8 +191,30 @@
 		586AC6AC2AAA1F3B001284E4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				586AC6B92AAA244E001284E4 /* CustomViews */,
+				586AC6BC2AAA24AA001284E4 /* UIColor+Extensions.swift */,
+				586AC6C92AAA49B3001284E4 /* Observable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		586AC6B92AAA244E001284E4 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				586AC6BA2AAA245C001284E4 /* CustomTextField.swift */,
+				586AC6C02AAA4260001284E4 /* CustomLabel.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		586AC6C22AAA4438001284E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				586AC6C32AAA4447001284E4 /* LoginModel.swift */,
+				586AC6C52AAA4501001284E4 /* ProfileInfo.swift */,
+				586AC6CB2AAA594F001284E4 /* ResponseModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,16 +287,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				586AC6CA2AAA49B3001284E4 /* Observable.swift in Sources */,
 				586AC6A72AAA1ECF001284E4 /* ProfileViewModel.swift in Sources */,
+				586AC6D02AAA75CB001284E4 /* LogoutNetworkService.swift in Sources */,
+				586AC6C12AAA4260001284E4 /* CustomLabel.swift in Sources */,
 				586AC6A12AAA1E9D001284E4 /* LoginViewModel.swift in Sources */,
 				586AC68E2AAA1D86001284E4 /* LoginViewController.swift in Sources */,
+				586AC6BD2AAA24AA001284E4 /* UIColor+Extensions.swift in Sources */,
+				586AC6C42AAA4447001284E4 /* LoginModel.swift in Sources */,
 				586AC6A52AAA1ECA001284E4 /* ProfileViewController.swift in Sources */,
 				586AC6B42AAA1F7A001284E4 /* NetworkRequest.swift in Sources */,
 				586AC6B62AAA1F80001284E4 /* LogoutRequest.swift in Sources */,
+				586AC6BF2AAA3AEA001284E4 /* InfoCell.swift in Sources */,
 				586AC6AE2AAA1F51001284E4 /* NetworkClient.swift in Sources */,
+				586AC6C62AAA4501001284E4 /* ProfileInfo.swift in Sources */,
 				586AC6B22AAA1F72001284E4 /* ProfileRequest.swift in Sources */,
+				586AC6BB2AAA245C001284E4 /* CustomTextField.swift in Sources */,
+				586AC6C82AAA48EA001284E4 /* LoginNetworkService.swift in Sources */,
 				586AC68A2AAA1D86001284E4 /* AppDelegate.swift in Sources */,
+				586AC6CE2AAA617B001284E4 /* ProfileNetworkService.swift in Sources */,
 				586AC68C2AAA1D86001284E4 /* SceneDelegate.swift in Sources */,
+				586AC6CC2AAA594F001284E4 /* ResponseModel.swift in Sources */,
 				586AC6B02AAA1F6B001284E4 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
