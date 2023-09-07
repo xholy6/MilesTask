@@ -63,18 +63,29 @@ final class ProfileViewController: UIViewController {
     }
 
     private func bind() {
-        viewModel.$profile.bind { [weak self] _ in
-            self?.profileTableView.reloadData()
+        viewModel.$decisionAboutAuth.bind { [weak self] authSuccess in
+            switch authSuccess {
+            case .failure:
+                self?.showLoginVC()
+            case .success:
+                self?.profileTableView.reloadData()
+            default:
+                break
+            }
         }
 
     }
 
     @objc
     private func quitButtonTapped() {
-        viewModel.logout()
-        navigationController?.popViewController(animated: true)
+        showLoginVC()
     }
 
+    private func showLoginVC() {
+        viewModel.logout()
+        navigationController?.setViewControllers([LoginViewController()], animated: true)
+    }
+    
     private func setupView() {
         title = "Профиль"
         view.backgroundColor = .white
@@ -132,4 +143,3 @@ extension ProfileViewController: UITableViewDelegate {
         Constants.cellHeight
     }
 }
-

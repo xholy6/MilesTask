@@ -46,14 +46,12 @@ final class InfoCell: UITableViewCell {
         switch index.row {
         case 0:
             dataLabel.text = info.firstName
-            print(info.firstName)
         case 1:
             dataLabel.text = info.lastName
         case 2:
             dataLabel.text = info.groupName
         case 3:
             dataLabel.text = info.email
-            print(info.email)
         case 4:
             dataLabel.text = info.points.first?.pointName
         case 5:

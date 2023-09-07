@@ -20,10 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func decideToCreateVC() -> UIViewController {
-        let isLaunchExists = UserDefaults.standard.bool(forKey: "isFirstAppLaunch")
-        let controller = isLaunchExists ? ProfileViewController() : LoginViewController()
+        let isLogouted = UserDefaults.standard.bool(forKey: "isLogouted")
+        print(isLogouted)
+        let controller = !isLogouted ? ProfileViewController() : LoginViewController()
         let nvc = UINavigationController(rootViewController: controller)
         return nvc
     }
 }
-

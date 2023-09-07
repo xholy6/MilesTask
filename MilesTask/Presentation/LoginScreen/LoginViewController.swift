@@ -91,7 +91,11 @@ final class LoginViewController: UIViewController {
 
     private func showProfileScreen() {
         let vc = ProfileViewController()
-        vc.viewModel.loginModel = viewModel.loginModel
+        guard let loginData = try? JSONEncoder().encode(viewModel.loginModel) else {
+            return
+        }
+        UserDefaults.standard.set(loginData, forKey: "LoginModel")
+        UserDefaults.standard.set(false, forKey: "isLogouted")
         navigationController?.pushViewController(vc, animated: true)
     }
 
