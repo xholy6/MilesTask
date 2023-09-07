@@ -19,7 +19,7 @@ final class InfoCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
-        label.text = "12312"
+        label.text = ""
         label.font = .systemFont(ofSize: 14)
         return label
     }()
@@ -32,6 +32,35 @@ final class InfoCell: UITableViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func configCell(info: UserProfile, index: IndexPath) {
+        setInfo(info, index)
+    }
+
+    func configDefault(title: String) {
+        titleLabel.text = title
+    }
+
+    private func setInfo(_ info: UserProfile, _ index: IndexPath) {
+        switch index.row {
+        case 0:
+            dataLabel.text = info.firstName
+            print(info.firstName)
+        case 1:
+            dataLabel.text = info.lastName
+        case 2:
+            dataLabel.text = info.groupName
+        case 3:
+            dataLabel.text = info.email
+            print(info.email)
+        case 4:
+            dataLabel.text = info.points.first?.pointName
+        case 5:
+            dataLabel.text = info.login
+        default:
+            break
+        }
     }
 
     private func setupView() {

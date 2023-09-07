@@ -33,8 +33,6 @@ final class LoginViewModel {
 
     func tryToAuth() {
         guard let login, let password else { return }
-        print(login)
-        print(password)
         loginModel = Login(login: login, password: password)
        guard let loginModel else { return }
 

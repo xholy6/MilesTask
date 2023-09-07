@@ -7,6 +7,16 @@
 
 import UIKit
 
+enum ProfileProperties: String, CaseIterable {
+    case login = "Логин"
+    case pointService = "Точка обслуживания"
+    case mail = "Почта"
+    case group = "Должность"
+    case lastname = "Фамилия"
+    case name = "Имя"
+}
+
+
 final class ProfileViewController: UIViewController {
 
     private enum Constants {
@@ -14,6 +24,8 @@ final class ProfileViewController: UIViewController {
         static let cellHeight: CGFloat = 56
         static let cellCount = 6
     }
+
+    var viewModel = ProfileViewModel()
 
     private lazy var profileTableView: UITableView = {
         let tableView = UITableView()
@@ -28,31 +40,46 @@ final class ProfileViewController: UIViewController {
         return tableView
     }()
 
-    private lazy var quitBackView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .mLightGray
-        view.layer.cornerRadius = Constants.cornerRadius
-        view.layer.masksToBounds = true
-        return view
-    }()
-
-    private lazy var quitLabel: CustomLabel = {
-        CustomLabel(frame: .zero)
+    private lazy var quitButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Выйти из профиля", for: .normal)
+        button.addTarget(self, action: #selector(quitButtonTapped), for: .touchUpInside)
+        button.backgroundColor = .mLightGray
+        button.layer.cornerRadius = Constants.cornerRadius
+        button.layer.masksToBounds = true
+        button.contentHorizontalAlignment = .leading
+        button.tintColor = .black
+        button.setTitleColor(.black, for: .normal)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         setupView()
         activateConstraints()
+    }
+
+    private func bind() {
+        viewModel.$profile.bind { [weak self] _ in
+            self?.profileTableView.reloadData()
+        }
+
+    }
+
+    @objc
+    private func quitButtonTapped() {
+        viewModel.logout()
+        navigationController?.popViewController(animated: true)
     }
 
     private func setupView() {
         title = "Профиль"
         view.backgroundColor = .white
         view.addSubview(profileTableView)
-        view.addSubview(quitBackView)
-        quitBackView.addSubview(quitLabel)
+        view.addSubview(quitButton)
     }
 
     private func activateConstraints() {
@@ -63,13 +90,10 @@ final class ProfileViewController: UIViewController {
             profileTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -edge),
             profileTableView.heightAnchor.constraint(equalToConstant: Constants.cellHeight * CGFloat(Constants.cellCount)),
 
-            quitBackView.topAnchor.constraint(equalTo: profileTableView.bottomAnchor, constant: 50),
-            quitBackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: edge),
-            quitBackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -edge),
-            quitBackView.heightAnchor.constraint(equalToConstant: 60),
-
-            quitLabel.centerYAnchor.constraint(equalTo: quitBackView.centerYAnchor),
-            quitLabel.leadingAnchor.constraint(equalTo: quitBackView.leadingAnchor, constant: 52),
+            quitButton.topAnchor.constraint(equalTo: profileTableView.bottomAnchor, constant: 50),
+            quitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: edge),
+            quitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -edge),
+            quitButton.heightAnchor.constraint(equalToConstant: 48),
         ])
     }
 }
@@ -89,6 +113,13 @@ extension ProfileViewController: UITableViewDataSource {
             withIdentifier: InfoCell.reuseIdentifier, for: indexPath) as? InfoCell
         else { return InfoCell() }
 
+        let allCases = ProfileProperties.allCases
+
+        if let profile = viewModel.profile {
+            cell.configCell(info: profile, index: indexPath)
+        } else {
+            cell.configDefault(title: allCases[indexPath.row].rawValue)
+        }
         return cell
     }
 }
@@ -101,3 +132,4 @@ extension ProfileViewController: UITableViewDelegate {
         Constants.cellHeight
     }
 }
+

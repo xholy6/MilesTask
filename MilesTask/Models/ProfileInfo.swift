@@ -21,7 +21,7 @@ struct UserProfile: Codable {
     let lastName: String
     let email: String
     let groupName: String
-    let groupTag: String
+    let points: [Point]
 
     enum CodingKeys: String, CodingKey {
         case login
@@ -29,6 +29,13 @@ struct UserProfile: Codable {
         case lastName = "last_name"
         case email
         case groupName = "group_name"
-        case groupTag = "group_tag"
+        case points
+    }
+}
+
+struct Point: Codable {
+    let pointName: String
+    enum CodingKeys: String, CodingKey {
+        case pointName = "point_name"
     }
 }

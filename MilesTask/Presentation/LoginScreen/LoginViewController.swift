@@ -91,7 +91,17 @@ final class LoginViewController: UIViewController {
 
     private func showProfileScreen() {
         let vc = ProfileViewController()
+        vc.viewModel.loginModel = viewModel.loginModel
         navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func showAlert() {
+        let alert = UIAlertController(title: "Ошибка",
+                                      message: "Неверный логин или пароль",
+                                      preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(action)
+        present(alert, animated: true)
     }
 
     private func bind() {
@@ -100,6 +110,8 @@ final class LoginViewController: UIViewController {
             case .success:
                 self?.showProfileScreen()
                 break
+            case .failure:
+                self?.showAlert()
             default:
                 break
             }

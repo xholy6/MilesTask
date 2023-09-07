@@ -29,6 +29,8 @@
 		586AC6C82AAA48EA001284E4 /* LoginNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6C72AAA48EA001284E4 /* LoginNetworkService.swift */; };
 		586AC6CA2AAA49B3001284E4 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6C92AAA49B3001284E4 /* Observable.swift */; };
 		586AC6CC2AAA594F001284E4 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6CB2AAA594F001284E4 /* ResponseModel.swift */; };
+		586AC6CE2AAA617B001284E4 /* ProfileNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6CD2AAA617B001284E4 /* ProfileNetworkService.swift */; };
+		586AC6D02AAA75CB001284E4 /* LogoutNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6CF2AAA75CB001284E4 /* LogoutNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		586AC6C72AAA48EA001284E4 /* LoginNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkService.swift; sourceTree = "<group>"; };
 		586AC6C92AAA49B3001284E4 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		586AC6CB2AAA594F001284E4 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		586AC6CD2AAA617B001284E4 /* ProfileNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNetworkService.swift; sourceTree = "<group>"; };
+		586AC6CF2AAA75CB001284E4 /* LogoutNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 				586AC6AB2AAA1EFE001284E4 /* Requests */,
 				586AC6AA2AAA1EF7001284E4 /* NetworkClient */,
 				586AC6C72AAA48EA001284E4 /* LoginNetworkService.swift */,
+				586AC6CD2AAA617B001284E4 /* ProfileNetworkService.swift */,
+				586AC6CF2AAA75CB001284E4 /* LogoutNetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 			files = (
 				586AC6CA2AAA49B3001284E4 /* Observable.swift in Sources */,
 				586AC6A72AAA1ECF001284E4 /* ProfileViewModel.swift in Sources */,
+				586AC6D02AAA75CB001284E4 /* LogoutNetworkService.swift in Sources */,
 				586AC6C12AAA4260001284E4 /* CustomLabel.swift in Sources */,
 				586AC6A12AAA1E9D001284E4 /* LoginViewModel.swift in Sources */,
 				586AC68E2AAA1D86001284E4 /* LoginViewController.swift in Sources */,
@@ -298,6 +305,7 @@
 				586AC6BB2AAA245C001284E4 /* CustomTextField.swift in Sources */,
 				586AC6C82AAA48EA001284E4 /* LoginNetworkService.swift in Sources */,
 				586AC68A2AAA1D86001284E4 /* AppDelegate.swift in Sources */,
+				586AC6CE2AAA617B001284E4 /* ProfileNetworkService.swift in Sources */,
 				586AC68C2AAA1D86001284E4 /* SceneDelegate.swift in Sources */,
 				586AC6CC2AAA594F001284E4 /* ResponseModel.swift in Sources */,
 				586AC6B02AAA1F6B001284E4 /* LoginRequest.swift in Sources */,

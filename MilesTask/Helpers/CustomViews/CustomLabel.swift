@@ -22,6 +22,5 @@ final class CustomLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
         textColor = .black
         font = .systemFont(ofSize: 16, weight: .semibold)
-        text = "213"
     }
 }
