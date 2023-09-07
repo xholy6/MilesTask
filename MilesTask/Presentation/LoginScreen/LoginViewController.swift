@@ -40,6 +40,15 @@ final class LoginViewController: UIViewController {
         return label
     }()
 
+    private lazy var textfieldsStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .fill
+        stack.axis = .vertical
+        stack.spacing = 25
+        return stack
+    }()
+
     private lazy var loginTextField: CustomTextField = {
         CustomTextField(frame: .zero, placeholderText: Constants.loginPlaceholder)
 
@@ -66,7 +75,10 @@ final class LoginViewController: UIViewController {
     }
 
     private func setupView() {
-        let views = [titleLabel, loginTextField, passwordTextField, doneButton]
+        textfieldsStack.addArrangedSubview(loginTextField)
+        textfieldsStack.addArrangedSubview(passwordTextField)
+        let views = [titleLabel, textfieldsStack, doneButton]
+
         view.addSubview(contentStack)
         views.forEach { contentStack.addArrangedSubview($0) }
         views.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }

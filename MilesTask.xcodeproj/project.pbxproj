@@ -22,6 +22,8 @@
 		586AC6B62AAA1F80001284E4 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6B52AAA1F80001284E4 /* LogoutRequest.swift */; };
 		586AC6BB2AAA245C001284E4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6BA2AAA245C001284E4 /* CustomTextField.swift */; };
 		586AC6BD2AAA24AA001284E4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6BC2AAA24AA001284E4 /* UIColor+Extensions.swift */; };
+		586AC6BF2AAA3AEA001284E4 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6BE2AAA3AEA001284E4 /* InfoCell.swift */; };
+		586AC6C12AAA4260001284E4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586AC6C02AAA4260001284E4 /* CustomLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		586AC6B52AAA1F80001284E4 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		586AC6BA2AAA245C001284E4 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		586AC6BC2AAA24AA001284E4 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		586AC6BE2AAA3AEA001284E4 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		586AC6C02AAA4260001284E4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 			children = (
 				586AC6A42AAA1ECA001284E4 /* ProfileViewController.swift */,
 				586AC6A62AAA1ECF001284E4 /* ProfileViewModel.swift */,
+				586AC6BE2AAA3AEA001284E4 /* InfoCell.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				586AC6BA2AAA245C001284E4 /* CustomTextField.swift */,
+				586AC6C02AAA4260001284E4 /* CustomLabel.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -253,12 +259,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				586AC6A72AAA1ECF001284E4 /* ProfileViewModel.swift in Sources */,
+				586AC6C12AAA4260001284E4 /* CustomLabel.swift in Sources */,
 				586AC6A12AAA1E9D001284E4 /* LoginViewModel.swift in Sources */,
 				586AC68E2AAA1D86001284E4 /* LoginViewController.swift in Sources */,
 				586AC6BD2AAA24AA001284E4 /* UIColor+Extensions.swift in Sources */,
 				586AC6A52AAA1ECA001284E4 /* ProfileViewController.swift in Sources */,
 				586AC6B42AAA1F7A001284E4 /* NetworkRequest.swift in Sources */,
 				586AC6B62AAA1F80001284E4 /* LogoutRequest.swift in Sources */,
+				586AC6BF2AAA3AEA001284E4 /* InfoCell.swift in Sources */,
 				586AC6AE2AAA1F51001284E4 /* NetworkClient.swift in Sources */,
 				586AC6B22AAA1F72001284E4 /* ProfileRequest.swift in Sources */,
 				586AC6BB2AAA245C001284E4 /* CustomTextField.swift in Sources */,
