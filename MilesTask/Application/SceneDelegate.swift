@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func decideToCreateVC() -> UIViewController {
         let isLaunchExists = UserDefaults.standard.bool(forKey: "isFirstAppLaunch")
-        let controller = !isLaunchExists ? ProfileViewController() : LoginViewController()
+        let controller = isLaunchExists ? ProfileViewController() : LoginViewController()
         let nvc = UINavigationController(rootViewController: controller)
         return nvc
     }

@@ -16,11 +16,16 @@ final class LoginViewController: UIViewController {
         static let doneButtonText = "Далее"
     }
 
+    private let viewModel = LoginViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupView()
         activateConstraints()
+        bind()
+        loginTextField.addTarget(self, action: #selector(loginFieldDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange), for: .editingChanged)
     }
 
     private lazy var contentStack: UIStackView = {
@@ -71,7 +76,34 @@ final class LoginViewController: UIViewController {
 
     @objc
     private func doneButtonTapped() {
+        viewModel.tryToAuth()
+    }
 
+    @objc
+    private func loginFieldDidChange(_ textField: UITextField) {
+        viewModel.loginChanged?(textField.text)
+    }
+
+    @objc
+    private func passwordTextFieldDidChange(_ textField: UITextField) {
+        viewModel.passwordChanged?(textField.text)
+    }
+
+    private func showProfileScreen() {
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func bind() {
+        viewModel.$authSuccess.bind { [weak self] code in
+            switch code {
+            case .success:
+                self?.showProfileScreen()
+                break
+            default:
+                break
+            }
+        }
     }
 
     private func setupView() {
