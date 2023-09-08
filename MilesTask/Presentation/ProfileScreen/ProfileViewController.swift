@@ -30,7 +30,6 @@ final class ProfileViewController: UIViewController {
 
     private lazy var profileTableView: UITableView = {
         let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.isScrollEnabled = false
@@ -43,7 +42,6 @@ final class ProfileViewController: UIViewController {
 
     private lazy var quitButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Выйти из профиля", for: .normal)
         button.addTarget(self, action: #selector(quitButtonTapped), for: .touchUpInside)
         button.backgroundColor = .mLightGray
@@ -58,7 +56,6 @@ final class ProfileViewController: UIViewController {
 
     private lazy var qrcodeButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "qrcode"), for: .normal)
         button.backgroundColor = .mRed
         let padding: CGFloat = 16
@@ -101,9 +98,9 @@ final class ProfileViewController: UIViewController {
     private func setupView() {
         title = "Профиль"
         view.backgroundColor = .white
-        view.addSubview(profileTableView)
-        view.addSubview(quitButton)
-        view.addSubview(qrcodeButton)
+        let views = [profileTableView, quitButton, qrcodeButton]
+        views.forEach { $0.translatesAutoresizingMaskIntoConstraints = false}
+        views.forEach { view.addSubview($0)}
     }
 
     private func activateConstraints() {
