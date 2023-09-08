@@ -50,7 +50,7 @@ final class ProfileViewController: UIViewController {
         button.contentHorizontalAlignment = .leading
         button.tintColor = .black
         button.setTitleColor(.black, for: .normal)
-        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
         return button
     }()
 
@@ -62,6 +62,13 @@ final class ProfileViewController: UIViewController {
         button.contentEdgeInsets = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
 
         return button
+    }()
+
+    private lazy var quitButtonImageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "quit")
+        return image
     }()
 
     override func viewDidLoad() {
@@ -88,6 +95,7 @@ final class ProfileViewController: UIViewController {
     @objc
     private func quitButtonTapped() {
         showLoginVC()
+        quitButton.isEnabled = false
     }
 
     private func showLoginVC() {
@@ -101,10 +109,12 @@ final class ProfileViewController: UIViewController {
         let views = [profileTableView, quitButton, qrcodeButton]
         views.forEach { $0.translatesAutoresizingMaskIntoConstraints = false}
         views.forEach { view.addSubview($0)}
+        quitButton.addSubview(quitButtonImageView)
     }
 
     private func activateConstraints() {
         let edge: CGFloat = 16
+        let quitEdge: CGFloat = 8
         NSLayoutConstraint.activate([
             profileTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             profileTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: edge),
@@ -120,6 +130,11 @@ final class ProfileViewController: UIViewController {
             qrcodeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             qrcodeButton.heightAnchor.constraint(equalToConstant: Constants.qrcodeButtonSize),
             qrcodeButton.widthAnchor.constraint(equalToConstant: Constants.qrcodeButtonSize),
+
+            quitButtonImageView.leadingAnchor.constraint(equalTo: quitButton.leadingAnchor, constant: quitEdge),
+            quitButtonImageView.topAnchor.constraint(equalTo: quitButton.topAnchor, constant: quitEdge),
+            quitButtonImageView.bottomAnchor.constraint(equalTo: quitButton.bottomAnchor, constant: -quitEdge),
+
         ])
 
         qrcodeButton.layer.cornerRadius = Constants.qrcodeButtonSize/2
