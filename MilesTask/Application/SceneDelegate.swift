@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func decideToCreateVC() -> UIViewController {
         let isLogouted = UserDefaults.standard.bool(forKey: "isLogouted")
-        print(isLogouted)
         let controller = !isLogouted ? ProfileViewController() : LoginViewController()
         let nvc = UINavigationController(rootViewController: controller)
         return nvc
