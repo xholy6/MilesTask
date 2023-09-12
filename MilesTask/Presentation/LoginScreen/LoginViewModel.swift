@@ -15,6 +15,7 @@ enum AuthSucccess {
 
 final class LoginViewModel {
     private let authService = LoginNetworkService()
+    private let authStorage = AuthDataStorage.shared
 
     @Observable
     private(set) var authSuccess: AuthSucccess = .none
@@ -35,6 +36,7 @@ final class LoginViewModel {
         guard let login, let password else { return }
         loginModel = Login(login: login, password: password)
        guard let loginModel else { return }
+        authStorage.setToStorage(loginModel)
 
         authService.sendAuth(with: loginModel) {[weak self] result in
             DispatchQueue.main.async {
@@ -48,7 +50,7 @@ final class LoginViewModel {
             }
         }
     }
-
+    
     private func subscribeForChanges() {
         loginChanged = { [weak self] newText in
             self?.login = newText
