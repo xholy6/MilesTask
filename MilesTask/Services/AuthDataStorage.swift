@@ -23,11 +23,16 @@ final class AuthDataStorage {
 
     func loadData() -> Login? {
         let decoder = JSONDecoder()
-        guard let encodedData = try keyChain.data(forKey: "Auth") else { return nil }
-        guard let authData = try? decoder.decode(Login.self, from: encodedData) else { return nil }
-        return authData
+        guard let encodedData = keyChain.data(forKey: "Auth") else { return nil }
+        do {
+            let authData = try decoder.decode(Login.self, from: encodedData)
+            return authData
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
     }
-
+    
     func remove() {
         keyChain.remove(forKey: "Auth")
     }
