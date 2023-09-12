@@ -8,7 +8,9 @@
 import Foundation
 
 struct ProfileInfo: Codable {
-    let data: DataContainer
+    let responseCode: Int
+    let responseMessage: String
+    let data: DataContainer?
 }
 
 struct DataContainer: Codable {

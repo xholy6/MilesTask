@@ -95,11 +95,11 @@ final class ProfileViewController: UIViewController {
     @objc
     private func quitButtonTapped() {
         showLoginVC()
+        viewModel.logout()
         quitButton.isEnabled = false
     }
 
     private func showLoginVC() {
-        viewModel.logout()
         navigationController?.setViewControllers([LoginViewController()], animated: true)
     }
     
