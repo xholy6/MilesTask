@@ -60,8 +60,8 @@ final class ProfileViewModel {
             switch result {
             case .success(let code):
                 print(code.responseCode)
-            case .failure(let eror):
-                print(eror)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
@@ -75,7 +75,5 @@ final class ProfileViewModel {
         } else {
             decisionAboutAuth = .failure
         }
-
-        print(retryCount)
     }
 }
